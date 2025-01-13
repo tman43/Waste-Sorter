@@ -1,0 +1,6 @@
+com\enviro365\wastesorting\service\WasteCategoryService.class
+com\enviro365\waste\WasteSorterApplication.class
+com\enviro365\wastesorting\controller\HomeController.class
+com\enviro365\wastesorting\controller\WasteCategoryController.class
+com\enviro365\wastesorting\model\WasteCategory.class
+com\enviro365\wastesorting\repository\WasteCategoryRepository.class

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #e0f7fa;
+            color: #004d40;
+        }
+        h1 {
+            color: #00796b;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        h2, h3 {
+            font-weight: bold;
+        }
+        .message {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .community-tips {
+            background-color: #b2dfdb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .suggestions {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .suggestion {
+            display: inline-block;
+            background-color: #b2ebf2;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .suggestion:hover {
+            background-color: #80deea;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .icon {
+            font-size: 50px;
+            color: #00796b;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Waste Manager <i class="fas fa-recycle"></i></h1>
+<div class="message">Help us keep the planet clean by sorting your waste responsibly!</div>
+
+<h3 style="color: blue;">We are saving our Environmentalists. Please select the material you want to recycle or dispose of, then enter your name.</h3>
+<div class="suggestions">
+    <span class="suggestion"><i class="fas fa-bottle"></i> Plastic</span>
+    <span class="suggestion"><i class="fas fa-newspaper"></i> Paper</span>
+    <span class="suggestion"><i class="fas fa-wine-bottle"></i> Glass</span>
+    <span class="suggestion"><i class="fas fa-cans"></i> Metal</span>
+    <span class="suggestion"><i class="fas fa-tv"></i> Electronics</span>
+    <span class="suggestion"><i class="fas fa-battery-full"></i> Batteries</span>
+    <span class="suggestion"><i class="fas fa-leaf"></i> Organic Waste</span>
+    <span class="suggestion"><i class="fas fa-tshirt"></i> Textiles</span>
+    <span class="suggestion"><i class="fas fa-tree"></i> Wood</span>
+    <span class="suggestion"><i class="fas fa-mug-hot"></i> Ceramics</span>
+    <span class="suggestion"><i class="fas fa-lightbulb"></i> Light Bulbs</span>
+    <span class="suggestion"><i class="fas fa-car"></i> Tires</span>
+</div>
+
+<input type="text" id="clientName" placeholder="Enter your name" /><br>
+<input type="text" id="materialInput" placeholder="Enter material type" />
+<button onclick="checkMaterial()">Check</button>
+<div class="result" id="result"></div>
+
+<div class="community-tips">
+    <h2>Community Cleanliness Tips</h2>
+    <ul>
+        <li>Organize regular community clean-up events.</li>
+        <li>Promote recycling and composting within the community.</li>
+        <li>Encourage the use of reusable bags, bottles, and containers.</li>
+        <li>Set up more recycling bins in public areas.</li>
+        <li>Educate community members about the impact of waste on the environment.</li>
+    </ul>
+    <h2>Complete Community Solid Waste Program</h2>
+    <p>A complete community solid waste program would include all of these steps:</p>
+    <ul>
+        <li><strong>Reduce the amount of waste created</strong>, especially toxic products and products that cannot be recycled.</li>
+        <li><strong>Separate wastes</strong> where they are made to make them easier and safer to handle.</li>
+        <li><strong>Compost food scraps</strong> and other organic wastes.</li>
+        <li><strong>Reuse materials</strong> whenever possible.</li>
+        <li><strong>Recycle materials</strong> and organize for government and industry to develop community recycling programs.</li>
+        <li><strong>Collect, transport, and store wastes safely</strong>. Respect and pay fair wages to the people who do this work.</li>
+        <li><strong>Safely dispose of all wastes</strong> that cannot be reused or recycled.</li>
+    </ul>
+    <h3>Reducing Waste</h3>
+    <p>Waste that ends up in our streets, homes, and fields begins with the industrial manufacturing of products that cannot be reused or recycled. One goal of a community waste program is to reduce waste over the long term by helping people use less of the materials that become waste in the first place. Some ways to reduce waste are:</p>
+    <ul>
+        <li>Not buying products wrapped in a lot of packaging materials.</li>
+        <li>Choosing glass and cardboard over plastic and metal.</li>
+        <li>Using your own shopping bag or basket, and refusing plastic bags at the store.</li>
+        <li>Buying food in larger quantities to reduce the amount of packaging you bring home.</li>
+        <li>Repairing or reusing what you can and buying second-hand products when possible.</li>
+    </ul>
+    <h3>Separate Wastes at the Source</h3>
+    <p>Keeping food wastes from mixing with paper wastes or glass, and so on, makes it easier to reuse, recycle, and get rid of materials, and helps prevent the health problems caused by mixed waste. Separating waste is the first step in better waste management, though it only solves the problem if there is a good way to deal with waste after it has been separated. Waste separation is part of a system that includes reuse, composting, regular collection, recycling, and safe disposal.</p>
+    <h3>Making Compost: Changing Organic Waste to Fertilizer</h3>
+    <p>Because organic matter is usually the largest part of most waste, separating and composting food scraps helps reduce waste a great deal. Adding compost to the soil is a way of adding crop nutrients back to the earth.</p>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const recyclingInfo = {
+        "Plastic": "Recycle plastics at designated recycling bins. Check for recycling codes.",
+        "Paper": "Recycle paper in paper recycling bins. Avoid recycling wet or greasy paper.",
+        "Glass": "Recycle glass bottles and jars in glass recycling bins. Rinse before recycling.",
+        "Metal": "Recycle metal cans and tins in metal recycling bins. Rinse before recycling.",
+        "Electronics": "Dispose of electronics at e-waste collection points.",
+        "Batteries": "Dispose of batteries at designated battery recycling points.",
+        "Organic Waste": "Compost organic waste or dispose of it in organic waste bins.",
+        "Textiles": "Donate usable textiles or recycle at textile recycling points.",
+        "Wood": "Recycle untreated wood at wood recycling centers.",
+        "Ceramics": "Dispose of ceramics in general waste or at specific recycling centers.",
+        "Light Bulbs": "Dispose of light bulbs at designated recycling points.",
+        "Tires": "Recycle tires at designated tire recycling centers."
+    };
+
+    document.querySelectorAll('.suggestion').forEach(item => {
+        item.addEventListener('click', event => {
+            document.getElementById('materialInput').value = event.target.textContent.trim();
+        });
+    });
+
+    function checkMaterial() {
+        const clientName = document.getElementById('clientName').value;
+        const material = document.getElementById('materialInput').value;
+        const resultDiv = document.getElementById('result');
+
+        if (!clientName || !material) {
+            resultDiv.textContent = "Please enter both your name and the material type.";
+            return;
+        }
+
+        if (recyclingInfo[material]) {
+            resultDiv.textContent = recyclingInfo[material];
+            saveMaterial(clientName, material, recyclingInfo[material]);
+        } else {
+            resultDiv.textContent = "Material not recognized. Please try another.";
+        }
+    }
+
+    function saveMaterial(clientName, material, description) {
+        fetch('/api/waste-categories/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: material,
+                description: description,
+                clientName: clientName
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+    /*]]>*/
+</script>
+</body>
+</html>
